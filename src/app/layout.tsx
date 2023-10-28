@@ -3,21 +3,25 @@ import type { Metadata } from 'next'
 
 import './globals.css'
 
+interface IProps {
+  children: React.ReactNode
+}
+
 export const metadata: Metadata = {
   title: 'Lesenelir Zhou',
   description: 'Lesenelir Zhou personal website',
 }
 
-interface IProps {
-  children: React.ReactNode
-}
-
+// Root Layout must container <html> and <body> tag
 export default function RootLayout(props: IProps) {
   const {children} = props
 
   return (
     <html lang="en">
-      <body className={''}>{children}</body>
+      <body className={''}>
+        <p>from root layout</p>
+        {children}
+      </body>
     </html>
   )
 }
